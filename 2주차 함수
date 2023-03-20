@@ -1,0 +1,120 @@
+// // 1. 함수생성
+// function printHello() {
+//   console.log("Hello");
+// }
+// printHello();
+
+// function log(message) {
+//   console.log(message);
+// }
+// log("helloloo");
+// log(1234);
+
+// // 2.Parameters
+// function changeName(obj) {
+//   obj.name = "coder";
+// }
+// const ellie = { name: "ellie" };
+// changeName(ellie);
+// console.log(ellie);
+
+// // 3.Default Parameters
+// function showMessage(message = "can`t read", from = "unknown") {
+//   console.log(`${message} by ${from}`);
+// }
+// showMessage(undefined, "my name is hyunjun");
+
+// // 4. Rest Parameters
+// function printAll(...args) {
+//   for (let i = 0; i < args.length; i++) {
+//     console.log(args[i]);
+//   }
+
+//   for (const arg of args) {
+//     console.log(arg);
+//   }
+
+//   args.forEach((arg) => console.log(arg));
+// }
+
+// printAll("hyunjun", "ellie", "coding");
+
+// // 5. Local scope
+// let globalMessage = "global"; //전역변수
+// function printMessage() {
+//   let message = "hello"; //지역변수
+//   console.log(message);
+//   console.log(globalMessage);
+//   function printMessage2() {
+//     let child = "hi";
+//     console.log(message);
+//     console.log(child);
+//   }
+//   console.log(child); // 에러
+//   printMessage2();
+// }
+// printMessage();
+
+// //6. early return, early exit
+// function upgradeUser(user) {
+//   //안 좋은방법
+//   if (user.point > 10) {
+//     // 로직
+//   }
+// }
+
+// function upgradeUser(user) {
+//   //좋은 방법
+//   if (user.point > 10) {
+//     return;
+//   }
+//   //로직
+// }
+
+// //7.함수는 변수에 할당이 가능하다
+// const print = function () {
+//   //anonymous function
+//   console.log("print");
+// };
+// print();
+// const printAgain = print;
+// printAgain();
+
+// //8. callback function using function expression
+// function randomQuiz(answer, printYes, printNo) {
+//   if (answer === "love you") {
+//     printYes();
+//   } else {
+//     printNo();
+//   }
+// }
+
+// const printYes = function () {
+//   console.log("yes!");
+// };
+
+// const printNo = function print() {
+//   console.log("no!");
+// };
+
+// randomQuiz("wrong", printYes, printNo);
+// randomQuiz("love you", printYes, printNo);
+
+// //9. arrow function ( allways anonymous)
+// //함수를 좀 더 간결하게 표현가능 하지만 로직이 길어질경우 사용 x
+// const simplePrint = function () {
+//   console.log("simplePrint!");
+// };
+
+// // const simplePrint = () => console.log('simplePrint!');
+// // const add = function(){
+// //   //로직
+// //   return a+b;
+// // }
+// const add = (a, b) => a + b;
+
+// //IIFE : Immediately Invoked Function Expression
+// //함수를 정의함과 동시에 바로 호출
+// (function hello() {
+//   console.log("IIFE");
+// })();
